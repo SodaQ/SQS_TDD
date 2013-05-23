@@ -45,6 +45,16 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_TriangleTest {
 		assertEquals("HypotenuseCalculation failed",  Math.sqrt( Math.pow(0.45, 2) + Math.pow(-213, 2) ) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateHypotenuse(0.45, -213), DELTA );
 	}
 	
+	//__________ testing with ( cat1 < 0 AND cat2 > 0 ) AND ( cat1 > 0 AND cat2 < 0 ) __________
+	@Test
+	public void calcHypotenuseWithInfiniteCats_returnRightLength() {
+		assertEquals("HypotenuseCalculation failed",  Math.sqrt( Math.pow(Double.POSITIVE_INFINITY, 2) + Math.pow(15.5, 2) ) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateHypotenuse(Double.POSITIVE_INFINITY, 15.5), DELTA );
+		assertEquals("HypotenuseCalculation failed",  Math.sqrt( Math.pow(Double.NEGATIVE_INFINITY, 2) + Math.pow(34.999, 2) ) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateHypotenuse(Double.POSITIVE_INFINITY, 34.999), DELTA );
+		assertEquals("HypotenuseCalculation failed",  Math.sqrt( Math.pow(Double.POSITIVE_INFINITY, 2) + Math.pow(Double.NEGATIVE_INFINITY, 2) ) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateHypotenuse(Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY), DELTA );
+		assertEquals("HypotenuseCalculation failed",  Math.sqrt( Math.pow(Double.NEGATIVE_INFINITY, 2) + Math.pow(Double.NEGATIVE_INFINITY, 2) ) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateHypotenuse(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY), DELTA );
+		assertEquals("HypotenuseCalculation failed",  Math.sqrt( Math.pow(Double.POSITIVE_INFINITY, 2) + Math.pow(Double.POSITIVE_INFINITY, 2) ) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateHypotenuse(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY), DELTA );
+	}
+	
 	
 	//_________ ANGLE __________
 	//to calculate: angle = 90 - givenAngle
@@ -69,6 +79,13 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_TriangleTest {
 		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-0.00001), DELTA );
 		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(90), DELTA );
 		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(200), DELTA );	
+	}
+	
+	//__________ testing with infinite angles __________
+	@Test
+	public void calcAngleWithInfiniteGivenAngles_returnNull() {
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(Double.POSITIVE_INFINITY), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(Double.NEGATIVE_INFINITY), DELTA );	
 	}
 	
 	
@@ -97,6 +114,12 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_TriangleTest {
 		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(2.3456, -8.7654), DELTA );
 		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(-7711, -66.6), DELTA );
 		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(-0.00001, 0), DELTA );
+	}
+	
+	//__________ testing with infinite caths __________
+	@Test
+	public void calcAreaWithInfiniteGivenCaths_returnRightArea() {
+		assertEquals("AreaCalculation failed",  (Double.POSITIVE_INFINITY) , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(Double.POSITIVE_INFINITY, 12), DELTA );
 	}
 	
 }
