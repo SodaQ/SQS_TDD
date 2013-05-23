@@ -73,7 +73,7 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_TriangleTest {
 	
 	
 	//_________ AREA __________
-	//to calculate: (cat1 * cat2) / 2
+	//to calculate: area = (cat1 * cat2) / 2
 	//given caths have to be > 0
 	//if input incorrect -> return 0
 	
