@@ -46,5 +46,29 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_TriangleTest {
 	}
 	
 	
+	//_________ ANGLE __________
+	//to calculate: angle = 90 - givenAngle
+	//given angle have to be between 0 and 90 degrees
+	//if input incorrect -> return 0
+	
+	//__________ testing with correct angles (incl. boundaries) __________
+	@Test
+	public void calcAngleWithCorrectlyGivenAngles_returnRightAngle() {
+		assertEquals("AngleCalculation failed",  90-24 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(24), DELTA );
+		assertEquals("AngleCalculation failed",  90-1 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(1), DELTA );
+		assertEquals("AngleCalculation failed",  90-0.0002 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(0.0002), DELTA );
+		assertEquals("AngleCalculation failed",  90-89 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(89), DELTA );
+		assertEquals("AngleCalculation failed",  90-89.999999 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(89.999999), DELTA );	
+	}
+	
+	//__________ testing with incorrect angles (incl. boundaries) __________
+	@Test
+	public void calcAngleWithIncorrectlyGivenAngles_returnNull() {
+		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-1000), DELTA );
+		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(0), DELTA );
+		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-0.00001), DELTA );
+		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(90), DELTA );
+		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(200), DELTA );	
+	}
 	
 }
