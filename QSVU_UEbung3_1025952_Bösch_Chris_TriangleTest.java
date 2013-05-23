@@ -64,11 +64,39 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_TriangleTest {
 	//__________ testing with incorrect angles (incl. boundaries) __________
 	@Test
 	public void calcAngleWithIncorrectlyGivenAngles_returnNull() {
-		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-1000), DELTA );
-		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(0), DELTA );
-		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-0.00001), DELTA );
-		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(90), DELTA );
-		assertEquals(null,  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(200), DELTA );	
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-1000), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(0), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(-0.00001), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(90), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateAngle(200), DELTA );	
+	}
+	
+	
+	//_________ AREA __________
+	//to calculate: (cat1 * cat2) / 2
+	//given caths have to be > 0
+	//if input incorrect -> return 0
+	
+	//__________ testing with correct caths (incl. boundaries) __________
+	@Test
+	public void calcAreaWithCorrectlyGivenCaths_returnRightArea() {
+		assertEquals("AreaCalculation failed",  (32*45)/2 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(32, 45), DELTA );
+		assertEquals("AreaCalculation failed",  (0.0001*0.5)/2 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(0.0001, 0.5), DELTA );
+		assertEquals("AreaCalculation failed",  (123456*200.99)/2 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(123456, 200.99), DELTA );
+		assertEquals("AreaCalculation failed",  (98765*0.00002)/2 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(98765, 0.00002), DELTA );
+		assertEquals("AreaCalculation failed",  (2*2)/2 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(2, 2), DELTA );
+	}
+	
+	//__________ testing with incorrect caths (incl. boundaries) __________
+	@Test
+	public void calcAreaWithIncorrectlyGivenCaths_returnRightArea() {
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(0, 12), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(45.22, 0), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(0, 0), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(-45.99, 0.0005), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(2.3456, -8.7654), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(-7711, -66.6), DELTA );
+		assertEquals("Exception failed",  0 , QSVU_UEbung3_1025952_Bösch_Chris_Triangle.calculateArea(-0.00001, 0), DELTA );
 	}
 	
 }
