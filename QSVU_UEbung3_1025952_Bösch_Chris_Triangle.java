@@ -14,7 +14,10 @@ public class QSVU_UEbung3_1025952_Bösch_Chris_Triangle {
 	}
 
 	public static double calculateAngle(double angle) {
-		return 0;
+		if(angle > 0 && angle < 90)
+			return 90-angle;
+		else 
+			return 0;
 	}
 
 	public static double calculateArea(double cat1, double cat2) {
